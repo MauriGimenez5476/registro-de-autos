@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+
+public class Registro {
+    private ArrayList<Auto> registros;
+
+    public Registro() {
+        registros = new ArrayList<>();
+    }
+
+    public void agregarAuto(Auto auto) {
+        registros.add(auto);
+        System.out.println("Auto registrado con éxito.");
+    }
+
+    public Auto buscarPorId(int id) {
+        for (Auto auto : registros) {
+            if (auto.getId() == id) {
+                return auto;
+            }
+        }
+        return null;
+    }
+
+    public void editarAuto(int id, String marca, String modelo, int año, String tipo, String numeroChasis, String color) {
+        Auto auto = buscarPorId(id);
+        if (auto != null) {
+            auto.setMarca(marca);
+            auto.setModelo(modelo);
+            auto.setAño(año);
+            auto.setTipo(tipo);
+            auto.setNumeroChasis(numeroChasis);
+            auto.setColor(color);
+            System.out.println("Registro actualizado con éxito.");
+        } else {
+            System.out.println("No se encontró ningún automóvil con el ID proporcionado.");
+            }
+    }
+}
