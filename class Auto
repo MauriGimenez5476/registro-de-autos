@@ -1,0 +1,51 @@
+public class Auto {
+    private int id;
+    private String marca;
+    private String modelo;
+    private int año;
+    private String tipo;
+    private String numeroChasis;
+    private String color;
+
+    public Auto(int id, String marca, String modelo, int año, String tipo, String numeroChasis, String color) {
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+        this.tipo = tipo;
+        this.numeroChasis = numeroChasis;
+        this.color = color;
+    }
+
+    public int getId() { return id; }
+    public String getMarca() { return marca; }
+    public String getModelo() { return modelo; }
+    public int getAño() { return año; }
+    public String getTipo() { return tipo; }
+    public String getNumeroChasis() { return numeroChasis; }
+    public String getColor() { return color; }
+
+    void setMarca(String marca) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void setModelo(String modelo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void setAño(int año) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void setTipo(String tipo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void setNumeroChasis(String numeroChasis) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void setColor(String color) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}
