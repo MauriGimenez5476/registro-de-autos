@@ -1,0 +1,119 @@
+import java.util.Scanner;
+
+public class Autos {
+
+    public static void main(String[] args) {
+        Registro registro = new Registro();
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+
+        do {
+            System.out.println("\nMenú Principal");
+            System.out.println("1. Crear un nuevo registro");
+            System.out.println("2. Buscar un registro");
+            System.out.println("3. Editar un registro");
+            System.out.println("4. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar el buffer
+
+            switch (opcion) {
+                case 1:
+                    crearRegistro(registro, scanner);
+                    break;
+                case 2:
+                    buscarRegistro(registro, scanner);
+                    break;
+                case 3:
+                    editarRegistro(registro, scanner);
+                    break;
+                case 4:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opción inválida. Intente de nuevo.");
+            }
+        } while (opcion != 4);
+    }
+
+    public static void crearRegistro(Registro registro, Scanner scanner) {
+        System.out.println("\nCreación de Nuevo Registro");
+
+        System.out.print("ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+
+        System.out.print("Marca: ");
+        String marca = scanner.nextLine();
+
+        System.out.print("Modelo: ");
+        String modelo = scanner.nextLine();
+
+        System.out.print("Año: ");
+        int año = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+
+        System.out.print("Tipo: ");
+        String tipo = scanner.nextLine();
+
+        System.out.print("Número de Chasis: ");
+        String numeroChasis = scanner.nextLine();
+
+        System.out.print("Color: ");
+        String color = scanner.nextLine();
+
+        Auto auto = new Auto(id, marca, modelo, año, tipo, numeroChasis, color);
+        registro.agregarAuto(auto);
+    }
+
+    public static void buscarRegistro(Registro registro, Scanner scanner) {
+        System.out.println("\nBúsqueda de Registro");
+
+        System.out.print("Ingrese el ID del automóvil a buscar: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+
+        Auto auto = registro.buscarPorId(id);
+        if (auto != null) {
+            System.out.println("Auto encontrado:");
+            System.out.println("ID: " + auto.getId());
+            System.out.println("Marca: " + auto.getMarca());
+            System.out.println("Modelo: " + auto.getModelo());
+            System.out.println("Año: " + auto.getAño());
+            System.out.println("Tipo: " + auto.getTipo());
+            System.out.println("Número de Chasis: " + auto.getNumeroChasis());
+            System.out.println("Color: " + auto.getColor());
+        } else {
+            System.out.println("No se encontró ningún auto con el ID proporcionado.");
+        }
+    }
+
+    public static void editarRegistro(Registro registro, Scanner scanner) {
+        System.out.println("\nEdición de Registro");
+
+        System.out.print("Ingrese el ID del automóvil a editar: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+
+        System.out.print("Nueva Marca: ");
+        String marca = scanner.nextLine();
+
+        System.out.print("Nuevo Modelo: ");
+        String modelo = scanner.nextLine();
+
+        System.out.print("Nuevo Año: ");
+        int año = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+
+        System.out.print("Nuevo Tipo: ");
+        String tipo = scanner.nextLine();
+
+        System.out.print("Nuevo Número de Chasis: ");
+        String numeroChasis = scanner.nextLine();
+
+        System.out.print("Nuevo Color: ");
+        String color = scanner.nextLine();
+
+        registro.editarAuto(id, marca, modelo, año, tipo, numeroChasis, color);
+    }
+}
